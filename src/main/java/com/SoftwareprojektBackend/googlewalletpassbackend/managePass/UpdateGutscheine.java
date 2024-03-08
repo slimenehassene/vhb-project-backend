@@ -26,7 +26,7 @@ public class UpdateGutscheine {
 
     public static Walletobjects service;
     private final String issuerId = "3388000000022298469";
-    private final String keyFilePath = "C:/Users/slime/Downloads/google-wallet-pass-backend/google-wallet-pass-backend/src/main/resources/arched-gear-411020-c5ab46ee8914.json";
+    private final String keyFilePath = "src/main/resources/arched-gear-411020-c5ab46ee8914.json";
 
     private Gutscheine gutscheine;
 
