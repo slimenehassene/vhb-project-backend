@@ -97,7 +97,7 @@ public class CreateBordkarten {
                         .setFlightHeader(
                                 new FlightHeader()
                                         .setCarrier(new FlightCarrier().setCarrierIataCode("AA"))
-                                        .setFlightNumber(bordkarte.getFlugnummer()))
+                                        .setFlightNumber("123"))
                         .setOrigin(new AirportInfo().setAirportIataCode(bordkarte.getStartFlughafencode()).setTerminal(bordkarte.getTerminal()).setGate(bordkarte.getGate()))
                         .setDestination(
                                 new AirportInfo().setAirportIataCode(bordkarte.getZielFlughafencode()).setTerminal(bordkarte.getTerminal()).setGate(bordkarte.getGate()));
