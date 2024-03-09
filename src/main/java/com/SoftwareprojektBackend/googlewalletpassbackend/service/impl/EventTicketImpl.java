@@ -49,12 +49,14 @@ public class EventTicketImpl implements EventTicketService {
                         });
                     } catch (IOException e) {
                         e.printStackTrace();
+                        throw new RuntimeException();
                     }
 
                 }
             });
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException();
         }
         eventTicketRepository.save(eventTicket);
 
@@ -77,6 +79,7 @@ public class EventTicketImpl implements EventTicketService {
             });
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException();
         }
         eventTicketRepository.save(eventTicket);
         return updateMessage;

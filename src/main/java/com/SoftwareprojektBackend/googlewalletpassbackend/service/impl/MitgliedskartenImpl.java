@@ -52,12 +52,14 @@ public class MitgliedskartenImpl implements MitgliedskartenService {
                         });
                     } catch (IOException e) {
                         e.printStackTrace();
+                        throw new RuntimeException();
                     }
 
                 }
             });
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException();
         }
         mitgliedskartenRepository.save(mitgliedskarten);
 
@@ -80,6 +82,7 @@ public class MitgliedskartenImpl implements MitgliedskartenService {
             });
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException();
         }
         mitgliedskartenRepository.save(mitgliedskarten);
         return updateMessage;

@@ -82,6 +82,7 @@ public class BordkarteImpl implements BordkarteService {
             });
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException();
         }
         bordkartenRepository.save(bordkarte);
         return updateMessage;

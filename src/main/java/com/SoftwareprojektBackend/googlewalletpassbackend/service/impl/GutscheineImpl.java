@@ -79,6 +79,7 @@ public class GutscheineImpl implements GutscheineService {
             });
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException();
         }
         gutscheineRepository.save(gutscheine);
         return updateMessage;
