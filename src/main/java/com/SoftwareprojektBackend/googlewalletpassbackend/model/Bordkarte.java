@@ -12,7 +12,6 @@ public class Bordkarte {
     @Id
     private Long id;
     private String header;
-    private String flugnummer;
     private String startflughafen;
 
     private String startFlughafencode;
@@ -28,8 +27,6 @@ public class Bordkarte {
 
     private String kabine;
 
-
-
     private String passagiere;
 
     private String zone;
@@ -43,14 +40,13 @@ public class Bordkarte {
     public Bordkarte() {
     }
 
-    public Bordkarte(Long id, String header, String flugnummer,
+    public Bordkarte(Long id, String header,
                      String startflughafen, String startFlughafencode,
                      String zielflughafen, String zielFlughafencode,
                      String terminal, String gate, String kabine,
                      String passagiere, String zone, String sitz, String farbe) {
         this.id = id;
         this.header = header;
-        this.flugnummer = flugnummer;
         this.startflughafen = startflughafen;
         this.startFlughafencode = startFlughafencode;
         this.zielflughafen = zielflughafen;
@@ -82,13 +78,7 @@ public class Bordkarte {
         this.header = header;
     }
 
-    public String getFlugnummer() {
-        return flugnummer;
-    }
 
-    public void setFlugnummer(String flugnummer) {
-        this.flugnummer = flugnummer;
-    }
 
     public String getStartflughafen() {
         return startflughafen;
