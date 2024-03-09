@@ -74,7 +74,6 @@ public class UpdateBordkarten {
         updatedClass
                 .setReviewStatus("UNDER_REVIEW")
                 .setIssuerName(bordkarte.getHeader())
-                .setLocalScheduledDepartureDateTime(bordkarte.getDatum() + "T" + bordkarte.getUhrZeit() + ":00")
                 .setFlightHeader(
                         new FlightHeader()
                                 .setCarrier(new FlightCarrier().setCarrierIataCode(bordkarte.getIataCode()))
