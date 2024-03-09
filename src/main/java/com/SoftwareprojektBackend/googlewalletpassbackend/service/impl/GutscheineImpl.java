@@ -49,12 +49,14 @@ public class GutscheineImpl implements GutscheineService {
                         });
                     } catch (IOException e) {
                         e.printStackTrace();
+                        throw new RuntimeException();
                     }
 
                 }
             });
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException();
         }
         gutscheineRepository.save(gutscheine);
 
