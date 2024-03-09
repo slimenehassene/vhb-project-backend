@@ -96,7 +96,7 @@ public class CreateBordkarten {
                         .setLocalScheduledDepartureDateTime("2024-07-02T15:30:00")
                         .setFlightHeader(
                                 new FlightHeader()
-                                        .setCarrier(new FlightCarrier().setCarrierIataCode(bordkarte.getIataCode()))
+                                        .setCarrier(new FlightCarrier().setCarrierIataCode("AA"))
                                         .setFlightNumber(bordkarte.getFlugnummer()))
                         .setOrigin(new AirportInfo().setAirportIataCode(bordkarte.getStartFlughafencode()).setTerminal(bordkarte.getTerminal()).setGate(bordkarte.getGate()))
                         .setDestination(

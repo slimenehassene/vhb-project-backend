@@ -76,7 +76,7 @@ public class UpdateBordkarten {
                 .setIssuerName(bordkarte.getHeader())
                 .setFlightHeader(
                         new FlightHeader()
-                                .setCarrier(new FlightCarrier().setCarrierIataCode(bordkarte.getIataCode()))
+                                .setCarrier(new FlightCarrier().setCarrierIataCode("AA"))
                                 .setFlightNumber(bordkarte.getFlugnummer()))
                 .setOrigin(new AirportInfo().setAirportIataCode(bordkarte.getStartFlughafencode()).setTerminal(bordkarte.getTerminal()).setGate(bordkarte.getGate()))
                 .setDestination(

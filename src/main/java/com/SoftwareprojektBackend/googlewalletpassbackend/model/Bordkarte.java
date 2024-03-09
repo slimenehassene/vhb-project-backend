@@ -13,7 +13,6 @@ public class Bordkarte {
     private Long id;
     private String header;
     private String flugnummer;
-    private String iataCode;
     private String startflughafen;
 
     private String startFlughafencode;
@@ -46,7 +45,7 @@ public class Bordkarte {
 
     public Bordkarte(Long id, String header, String flugnummer,
                      String startflughafen, String startFlughafencode,
-                     String zielflughafen, String zielFlughafencode,String iataCode,
+                     String zielflughafen, String zielFlughafencode,
                      String terminal, String gate, String kabine,
                      String passagiere, String zone, String sitz, String farbe) {
         this.id = id;
@@ -59,7 +58,6 @@ public class Bordkarte {
         this.terminal = terminal;
         this.gate = gate;
         this.kabine = kabine;
-        this.iataCode = iataCode;
         this.passagiere = passagiere;
         this.zone = zone;
         this.sitz = sitz;
@@ -70,13 +68,7 @@ public class Bordkarte {
         return id;
     }
 
-    public String getIataCode() {
-        return iataCode;
-    }
 
-    public void setIataCode(String iataCode) {
-        this.iataCode = iataCode;
-    }
 
     public void setId(Long id) {
         this.id = id;
