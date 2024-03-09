@@ -93,7 +93,7 @@ public class CreateBordkarten {
                         .setSecurityAnimation(new SecurityAnimation().setAnimationType("FOIL_SHIMMER"))
                         .setReviewStatus("UNDER_REVIEW")
                         .setIssuerName(bordkarte.getHeader())
-                        .setLocalScheduledDepartureDateTime(bordkarte.getDatum() + "T" + bordkarte.getUhrZeit() + ":00")
+                        .setLocalScheduledDepartureDateTime("2024-07-02T15:30:00")
                         .setFlightHeader(
                                 new FlightHeader()
                                         .setCarrier(new FlightCarrier().setCarrierIataCode(bordkarte.getIataCode()))

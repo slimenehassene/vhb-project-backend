@@ -28,8 +28,7 @@ public class Bordkarte {
     private String gate;
 
     private String kabine;
-    private String datum;
-    private String uhrZeit;
+
 
 
     private String passagiere;
@@ -46,9 +45,9 @@ public class Bordkarte {
     }
 
     public Bordkarte(Long id, String header, String flugnummer,
-                     String startflughafen, String startFlughafencode,String uhrZeit,
+                     String startflughafen, String startFlughafencode,
                      String zielflughafen, String zielFlughafencode,String iataCode,
-                     String terminal, String gate, String kabine, String datum,
+                     String terminal, String gate, String kabine,
                      String passagiere, String zone, String sitz, String farbe) {
         this.id = id;
         this.header = header;
@@ -60,8 +59,6 @@ public class Bordkarte {
         this.terminal = terminal;
         this.gate = gate;
         this.kabine = kabine;
-        this.datum = datum;
-        this.uhrZeit= uhrZeit;
         this.iataCode = iataCode;
         this.passagiere = passagiere;
         this.zone = zone;
@@ -156,23 +153,6 @@ public class Bordkarte {
     public void setKabine(String kabine) {
         this.kabine = kabine;
     }
-
-    public String getDatum() {
-        return datum;
-    }
-
-    public String getUhrZeit() {
-        return uhrZeit;
-    }
-
-    public void setUhrZeit(String uhrZeit) {
-        this.uhrZeit = uhrZeit;
-    }
-
-    public void setDatum(String datum) {
-        this.datum = datum;
-    }
-
 
 
     public String getPassagiere() {
