@@ -7,6 +7,7 @@ import com.SoftwareprojektBackend.googlewalletpassbackend.repository.GutscheineR
 import com.SoftwareprojektBackend.googlewalletpassbackend.service.GutscheineService;
 import com.google.api.services.walletobjects.model.OfferClass;
 import com.google.api.services.walletobjects.model.OfferObject;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -30,6 +31,7 @@ public class GutscheineImpl implements GutscheineService {
     }
 
     @Override
+    @Async
     public String createPass(Gutscheine gutscheine) {
 
         CreateGutscheine createGutscheine = new CreateGutscheine(classSuffix + gutscheine.getId(), objectSuffix + gutscheine.getId(), gutscheine);
@@ -66,6 +68,7 @@ public class GutscheineImpl implements GutscheineService {
     }
 
     @Override
+    @Async
     public String updatePass(Gutscheine gutscheine) {
         UpdateGutscheine updateGutscheine;
         try {
@@ -87,11 +90,13 @@ public class GutscheineImpl implements GutscheineService {
 
 
     @Override
+    @Async
     public Gutscheine getGutscheine(Long gutscheinId) {
         return gutscheineRepository.findById(gutscheinId).get();
     }
 
     @Override
+    @Async
     public List<Gutscheine> getAllGutscheine() {
         return gutscheineRepository.findAll();
     }

@@ -7,6 +7,7 @@ import com.SoftwareprojektBackend.googlewalletpassbackend.repository.Mitgliedska
 import com.SoftwareprojektBackend.googlewalletpassbackend.service.MitgliedskartenService;
 import com.google.api.services.walletobjects.model.LoyaltyClass;
 import com.google.api.services.walletobjects.model.LoyaltyObject;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class MitgliedskartenImpl implements MitgliedskartenService {
     }
 
     @Override
+    @Async
     public String createPass(Mitgliedskarten mitgliedskarten) {
 
 
@@ -69,6 +71,7 @@ public class MitgliedskartenImpl implements MitgliedskartenService {
     }
 
     @Override
+    @Async
     public String updatePass(Mitgliedskarten mitgliedskarten) {
         UpdateMitgliedskarten updateMitgliedskarten;
         try {
@@ -90,11 +93,13 @@ public class MitgliedskartenImpl implements MitgliedskartenService {
 
 
     @Override
+    @Async
     public Mitgliedskarten getMitgliedskarte(Long mitgliedskartenId) {
         return mitgliedskartenRepository.findById(mitgliedskartenId).get();
     }
 
     @Override
+    @Async
     public List<Mitgliedskarten> getAllMitgliedskarten() {
         return mitgliedskartenRepository.findAll();
     }

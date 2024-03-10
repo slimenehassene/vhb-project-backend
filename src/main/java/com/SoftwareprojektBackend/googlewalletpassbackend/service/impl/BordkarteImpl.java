@@ -7,6 +7,7 @@ import com.SoftwareprojektBackend.googlewalletpassbackend.repository.BordkartenR
 import com.SoftwareprojektBackend.googlewalletpassbackend.service.BordkarteService;
 import com.google.api.services.walletobjects.model.FlightClass;
 import com.google.api.services.walletobjects.model.FlightObject;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -32,6 +33,7 @@ public class BordkarteImpl implements BordkarteService {
 
 
     @Override
+    @Async
     public String createPass(Bordkarte bordkarte) {
 
         CreateBordkarten createBordkarten = new CreateBordkarten(classSuffix + bordkarte.getId().toString(), objectSuffix + bordkarte.getId().toString(), bordkarte);
@@ -68,6 +70,7 @@ public class BordkarteImpl implements BordkarteService {
     }
 
     @Override
+    @Async
     public String updatePass(Bordkarte bordkarte) {
 
         UpdateBordkarten updateBordkarten;
@@ -91,11 +94,13 @@ public class BordkarteImpl implements BordkarteService {
 
 
     @Override
+    @Async
     public Bordkarte getBordkarte(Long bordkarteId) {
         return bordkartenRepository.findById(bordkarteId).get();
     }
 
     @Override
+    @Async
     public List<Bordkarte> getAllBordkarten() {
         return bordkartenRepository.findAll();
     }

@@ -7,6 +7,7 @@ import com.SoftwareprojektBackend.googlewalletpassbackend.repository.EventTicket
 import com.SoftwareprojektBackend.googlewalletpassbackend.service.EventTicketService;
 import com.google.api.services.walletobjects.model.EventTicketClass;
 import com.google.api.services.walletobjects.model.EventTicketObject;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -29,6 +30,7 @@ public class EventTicketImpl implements EventTicketService {
     }
 
     @Override
+    @Async
     public String createPass(EventTicket eventTicket) {
 
 
@@ -66,6 +68,7 @@ public class EventTicketImpl implements EventTicketService {
     }
 
     @Override
+    @Async
     public String updatePass(EventTicket eventTicket) {
         UpdateEventTicket updateEventTicket;
         try {
@@ -87,11 +90,13 @@ public class EventTicketImpl implements EventTicketService {
 
 
     @Override
+    @Async
     public EventTicket getEventTicket(Long eventTicketId) {
         return eventTicketRepository.findById(eventTicketId).get();
     }
 
     @Override
+    @Async
     public List<EventTicket> getAllEventTicket() {
         return eventTicketRepository.findAll();
     }
