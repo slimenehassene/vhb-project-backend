@@ -37,13 +37,11 @@ public class EventTicketImpl implements EventTicketService {
         try {
             createEventTicket.createClass(new CreateEventTicket.CallbackClass() {
                 @Override
-                @Async
                 public void callback(EventTicketClass newClass) {
 
                     try {
                         createEventTicket.createObject(new CreateEventTicket.CallbackObject() {
                             @Override
-                            @Async
                             public void callback(EventTicketObject newObject) {
                                 System.out.println("Pass-Objekt erstellt mit ID: " + newObject.getId());
                                 jwt = createEventTicket.createJWT(newClass, newObject);
@@ -76,7 +74,6 @@ public class EventTicketImpl implements EventTicketService {
             updateEventTicket.updateClass(classSuffix + eventTicket.getId().toString());
             updateEventTicket.updateObject(eventTicket.getId().toString(), new UpdateEventTicket.CallbackUpdateObject() {
                 @Override
-                @Async
                 public void callback(String response) {
                     updateMessage = response;
                 }

@@ -37,13 +37,11 @@ public class GutscheineImpl implements GutscheineService {
         try {
             createGutscheine.createClass(new CreateGutscheine.CallbackClass() {
                 @Override
-                @Async
                 public void callback(OfferClass newClass) {
 
                     try {
                         createGutscheine.createObject(new CreateGutscheine.CallbackObject() {
                             @Override
-                            @Async
                             public void callback(OfferObject newObject) {
                                 System.out.println("Pass-Objekt erstellt mit ID: " + newObject.getId());
                                 jwt = createGutscheine.createJWT(newClass, newObject);

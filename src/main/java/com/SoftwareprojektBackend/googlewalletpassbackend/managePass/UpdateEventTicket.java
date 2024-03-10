@@ -9,6 +9,7 @@ import com.google.api.services.walletobjects.Walletobjects;
 import com.google.api.services.walletobjects.model.*;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
+import org.springframework.scheduling.annotation.Async;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -37,6 +38,7 @@ public class UpdateEventTicket {
         auth();
     }
 
+    @Async
     public void auth() throws Exception {
         String scope = "https://www.googleapis.com/auth/wallet_object.issuer";
 
@@ -56,6 +58,7 @@ public class UpdateEventTicket {
                         .build();
     }
 
+    @Async
     public void updateClass(String classSuffix) throws IOException {
         EventTicketClass updatedClass;
 
@@ -90,6 +93,7 @@ public class UpdateEventTicket {
     }
 
 
+    @Async
     public void updateObject(String objectSuffix, UpdateEventTicket.CallbackUpdateObject callbackupdateObject) throws IOException {
         EventTicketObject updatedObject;
 

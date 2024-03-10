@@ -39,13 +39,11 @@ public class BordkarteImpl implements BordkarteService {
         try {
             createBordkarten.createClass(new CreateBordkarten.CallbackClass() {
                 @Override
-                @Async
                 public void callback(FlightClass newClass) {
 
                     try {
                         createBordkarten.createObject(new CreateBordkarten.CallbackObject() {
                             @Override
-                            @Async
                             public void callback(FlightObject newObject) {
                                 System.out.println("Pass-Objekt erstellt mit ID: " + newObject.getId());
                                 jwt = createBordkarten.createJWT(newClass, newObject);
@@ -79,7 +77,6 @@ public class BordkarteImpl implements BordkarteService {
             updateBordkarten.updateClass(classSuffix + bordkarte.getId().toString());
             updateBordkarten.updateObject(objectSuffix + bordkarte.getId().toString(), new UpdateBordkarten.CallbackUpdateObject() {
                 @Override
-                @Async
                 public void callback(String response) {
                     updateMessage = response;
                 }
