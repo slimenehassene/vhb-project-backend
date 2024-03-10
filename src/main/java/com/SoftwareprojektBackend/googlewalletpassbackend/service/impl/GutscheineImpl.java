@@ -31,18 +31,19 @@ public class GutscheineImpl implements GutscheineService {
     }
 
     @Override
-    @Async
     public String createPass(Gutscheine gutscheine) {
 
         CreateGutscheine createGutscheine = new CreateGutscheine(classSuffix + gutscheine.getId(), objectSuffix + gutscheine.getId(), gutscheine);
         try {
             createGutscheine.createClass(new CreateGutscheine.CallbackClass() {
                 @Override
+                @Async
                 public void callback(OfferClass newClass) {
 
                     try {
                         createGutscheine.createObject(new CreateGutscheine.CallbackObject() {
                             @Override
+                            @Async
                             public void callback(OfferObject newObject) {
                                 System.out.println("Pass-Objekt erstellt mit ID: " + newObject.getId());
                                 jwt = createGutscheine.createJWT(newClass, newObject);
@@ -68,7 +69,6 @@ public class GutscheineImpl implements GutscheineService {
     }
 
     @Override
-    @Async
     public String updatePass(Gutscheine gutscheine) {
         UpdateGutscheine updateGutscheine;
         try {
@@ -90,13 +90,11 @@ public class GutscheineImpl implements GutscheineService {
 
 
     @Override
-    @Async
     public Gutscheine getGutscheine(Long gutscheinId) {
         return gutscheineRepository.findById(gutscheinId).get();
     }
 
     @Override
-    @Async
     public List<Gutscheine> getAllGutscheine() {
         return gutscheineRepository.findAll();
     }

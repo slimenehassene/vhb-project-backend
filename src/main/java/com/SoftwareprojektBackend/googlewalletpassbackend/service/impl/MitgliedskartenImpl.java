@@ -33,7 +33,6 @@ public class MitgliedskartenImpl implements MitgliedskartenService {
     }
 
     @Override
-    @Async
     public String createPass(Mitgliedskarten mitgliedskarten) {
 
 
@@ -71,7 +70,6 @@ public class MitgliedskartenImpl implements MitgliedskartenService {
     }
 
     @Override
-    @Async
     public String updatePass(Mitgliedskarten mitgliedskarten) {
         UpdateMitgliedskarten updateMitgliedskarten;
         try {
@@ -93,13 +91,11 @@ public class MitgliedskartenImpl implements MitgliedskartenService {
 
 
     @Override
-    @Async
     public Mitgliedskarten getMitgliedskarte(Long mitgliedskartenId) {
         return mitgliedskartenRepository.findById(mitgliedskartenId).get();
     }
 
     @Override
-    @Async
     public List<Mitgliedskarten> getAllMitgliedskarten() {
         return mitgliedskartenRepository.findAll();
     }
