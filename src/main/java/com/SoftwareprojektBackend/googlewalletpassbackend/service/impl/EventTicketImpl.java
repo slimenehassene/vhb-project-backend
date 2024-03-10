@@ -69,7 +69,6 @@ public class EventTicketImpl implements EventTicketService {
     }
 
     @Override
-    @Async
     public String updatePass(EventTicket eventTicket) {
         UpdateEventTicket updateEventTicket;
         try {
