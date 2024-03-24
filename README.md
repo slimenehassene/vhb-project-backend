@@ -1,7 +1,7 @@
 # Google Wallet Pass Backend
 
 ## Beschreibung:
-Das Google Wallet Pass Backend ist eine RESTful-API, die verschiedene Endpunkte bereitstellt, um Passdaten zu verwalten. Die API ermöglicht das Erstellen, Lesen, Aktualisieren und Löschen von Passen verschiedener Typen wie Bordkarten, Eventtickets, Gutscheine und Mitgliedskarten.
+Das Google Wallet Pass Backend ist eine RESTful-API, die verschiedene Endpunkte bereitstellt, um Passdaten zu verwalten. Die API ermöglicht das Erstellen, Lesen, Aktualisieren und Löschen von Passen verschiedener Typen wie Bordkarten, Eventtickets, Gutscheine und Mitgliedskarten und alles im datenbank speichert.
 
 ## Endpunkte:
 
